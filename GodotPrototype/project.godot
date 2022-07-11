@@ -10,7 +10,7 @@ config_version=4
 
 [application]
 
-config/name="GodotPrototype"
+config/name="GodotPrototype2"
 run/main_scene="res://Node2D.tscn"
 config/icon="res://icon.png"
 
