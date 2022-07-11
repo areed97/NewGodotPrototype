@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://northeasterdorysail.png" type="Texture" id=1]
 [ext_resource path="res://northeasterdorybase.png" type="Texture" id=2]
 [ext_resource path="res://Node2D.gd" type="Script" id=3]
+[ext_resource path="res://northeasterdoryothersail.PNG" type="Texture" id=4]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 3 )
@@ -19,6 +20,12 @@ margin_top = 114.0
 margin_right = 60.0
 margin_bottom = 138.0
 
+[node name="CheckBox3" type="CheckBox" parent="."]
+margin_left = 36.0
+margin_top = 141.0
+margin_right = 60.0
+margin_bottom = 165.0
+
 [node name="Base" type="Node2D" parent="."]
 
 [node name="Sprite" type="Sprite" parent="Base"]
@@ -28,10 +35,20 @@ texture = ExtResource( 2 )
 
 [node name="Sail" type="Node2D" parent="."]
 
-[node name="Sprite2" type="Sprite" parent="Sail"]
+[node name="Othersail" type="Node2D" parent="Sail"]
+
+[node name="Sprite" type="Sprite" parent="Sail/Othersail"]
+visible = false
+position = Vector2( 309, 176 )
+texture = ExtResource( 4 )
+
+[node name="Firstsail" type="Node2D" parent="Sail"]
+
+[node name="Sprite2" type="Sprite" parent="Sail/Firstsail"]
 visible = false
 position = Vector2( 339, 236 )
 texture = ExtResource( 1 )
 
 [connection signal="toggled" from="CheckBox" to="." method="_on_CheckBox_toggled"]
 [connection signal="toggled" from="CheckBox2" to="." method="_on_CheckBox2_toggled"]
+[connection signal="toggled" from="CheckBox3" to="." method="_on_CheckBox3_toggled"]
